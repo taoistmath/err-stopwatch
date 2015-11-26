@@ -1,0 +1,9 @@
+[Python]
+Version=2+
+
+[Core]
+Name = StopwatchBot
+Module = stopwatchBot
+
+[Documentation]
+Description = Tracks elapsed time, can track multiple timers simultaneously.
