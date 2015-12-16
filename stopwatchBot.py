@@ -12,9 +12,9 @@ class StopwatchBot(BotPlugin):
     date_format = '%a %b %d %H:%M:%S %Y'
 
     @botcmd
-    def start_timer(self, mess, args):
+    def timer_start(self, mess, args):
         """ Starts timer
-        Example: !start timer Regression Testing
+        Example: !timer start Regression Testing
         """
 
         if not args:
@@ -39,7 +39,7 @@ class StopwatchBot(BotPlugin):
         stopwatchList = ''
 
         if not self.stopwatchDict:
-            return "Nothing is being timed. Use !start timer <something_or_other> to start timing."
+            return "Nothing is being timed. Use !timer start <something_or_other> to start timing."
 
         for key, value in self.stopwatchDict.items() :
             stopwatchList = stopwatchList + "{0} - Started at: {1} \n".format(key, value)
@@ -47,9 +47,9 @@ class StopwatchBot(BotPlugin):
         return stopwatchList
 
     @botcmd
-    def stop_timer(self, mess, args):
+    def timer_stop(self, mess, args):
         """ Stops timer, tells how much time elapsed
-        Example: !stop timer Regression Testing
+        Example: !timer stop Regression Testing
         """
 
         if not args:
